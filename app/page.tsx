@@ -1,21 +1,14 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { useTheme } from "next-themes"
-import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import Link from "next/link";
 
 export default function Home() {
 
-    const { theme, setTheme } = useTheme();
-
-    const handleTheme = () => {
-        theme == "dark" ? setTheme("light") : setTheme("dark");
-    }
-
     return (
+        <div className="dark">
         <AuroraBackground>
             <motion.div
             initial={{ opacity: 0.0, y: 40 }}
@@ -29,11 +22,11 @@ export default function Home() {
 
                 <nav className="py-3 px-8 flex items-center justify-between border-b border-b-gray-300 dark:border-0">
                     <h1 className="text-3xl dark:text-white">PromoGen</h1>
-                    <Button variant="default" onClick={handleTheme}>
-                        {
-                                localStorage.getItem("theme") == "dark" ? <MdDarkMode /> : <MdLightMode />
-                        }
-                    </Button>
+                    <div className="flex items-center gap-8 pr-10">
+                        <Link href={"/"} className="text-white">Home</Link>
+                        <Link href={"/generate-image"} className="text-white">Image</Link>
+                        <Link href={"/generate-video"} className="text-white">Video</Link>
+                    </div>
                 </nav>
                 <div className="flex flex-col pt-[10vh] px-[4vw] gap-[5vh]">
                     <div className="py-5">
@@ -65,5 +58,6 @@ export default function Home() {
 
             </motion.div>
         </AuroraBackground>
+        </div>
     )
 }
