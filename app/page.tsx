@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import Link from "next/link";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Playground from "./components/playground";
 
 export default function Home() {
 
@@ -14,7 +16,7 @@ export default function Home() {
     }
 
     return (
-        <div className="dark">
+        <div className="dark relative">
             <AuroraBackground>
                 <motion.div
                 initial={{ opacity: 0.0, y: 40 }}
@@ -54,23 +56,42 @@ export default function Home() {
                             </Link> */}
                             <Button variant="default" onClick={moveDown}>
                                 <p className="text-lg p-4">
-                                    Generate Image
+                                    Generate
                                 </p>
                             </Button>
-                            <Link href={"/generate-video"}>
+                            {/* <Link href={"/generate-video"}>
                                 <Button variant="default">
                                     <p className="text-lg p-4">
                                         Generate Video
                                     </p>
                                 </Button>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
 
                 </motion.div>
             </AuroraBackground>
-            <div className="h-screen bg-gradient-to-b from-[#18181B] to-slate-900" id="section-2">
-                
+            <div className="absolute h-screen w-screen z-10 top-[98vh] bg-gradient-to-b from-[#18181B] to-slate-900" id="section-2">
+                <div className="flex items-center justify-center pt-[8vh]">
+                    <Tabs defaultValue="image" className="w-[400px] flex flex-col">
+                        <TabsList>
+                            <TabsTrigger value="image" 
+                            className="w-[50%]">
+                                IMAGE
+                            </TabsTrigger>
+                            <TabsTrigger value="video" 
+                            className="w-[50%]">
+                                VIDEO
+                            </TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="image" className="grid justify-center">
+                            <Playground  value={"image"} />
+                        </TabsContent>
+                        <TabsContent value="video" className="grid justify-center">
+                            <Playground value={"video"} />
+                        </TabsContent>
+                    </Tabs>
+                </div>
             </div>
         </div>
     )
