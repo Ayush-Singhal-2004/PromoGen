@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Playground from "./components/playground";
 import { RiToolsFill } from "react-icons/ri";
 import { useState } from "react";
+import { Cover } from "@/components/ui/cover";
 
 export default function Home() {
 
@@ -50,9 +51,10 @@ export default function Home() {
                     </nav>
                     <div className="flex flex-col pt-[10vh] px-[4vw] gap-[5vh]">
                         <div className="py-5">
-                            <h1 className="text-7xl font-semibold mb-2 dark:to-zinc-300 dark:bg-clip-text text-transparent] dark:text-white">
-                                Unleash Creativity <br/>
-                                with GenAI
+                            <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+                            Unleash Creativity 
+                                <br /> with
+                                <Cover>GenAI</Cover>
                             </h1>
                             <p className="text-gray-700 dark:bg-gradient-to-tr dark:from-gray-50 dark:to-gray-300 dark:bg-clip-text dark:text-transparent tracking-wider">
                                 Instant, dynamic banners and videos for every promotion.
