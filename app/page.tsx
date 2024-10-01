@@ -3,17 +3,28 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Playground from "./components/playground";
 import { RiToolsFill } from "react-icons/ri";
+import { useState } from "react";
 
 export default function Home() {
+
+    const [state, setState] = useState("image");
 
     const moveDown = () => {
         document.getElementById("section-2")?.scrollIntoView({
             behavior: "smooth"
         });
+    }
+
+    const handleTabClick = () => {
+        if(state === "image") {
+            setState("video");
+        }
+        else {
+            setState("image");
+        }
     }
 
     return (
@@ -31,11 +42,6 @@ export default function Home() {
 
                     <nav className="py-3 px-8 flex items-center justify-between border-b border-b-gray-300 dark:border-0">
                         <h1 className="text-3xl dark:text-white">PromoGen</h1>
-                        {/* <div className="flex items-center gap-8 pr-10">
-                            <Link href={"/"} className="text-white">Home</Link>
-                            <Link href={"/generate-image"} className="text-white">Image</Link>
-                            <Link href={"/generate-video"} className="text-white">Video</Link>
-                        </div> */}
                     </nav>
                     <div className="flex flex-col pt-[10vh] px-[4vw] gap-[5vh]">
                         <div className="py-5">
@@ -64,11 +70,11 @@ export default function Home() {
                     <Tabs defaultValue="image" className="w-[400px] flex flex-col">
                         <TabsList>
                             <TabsTrigger value="image" 
-                            className="w-[50%]">
+                            className="w-[50%]" onClick={handleTabClick}>
                                 IMAGE
                             </TabsTrigger>
                             <TabsTrigger value="video" 
-                            className="w-[50%]">
+                            className="w-[50%]" onClick={handleTabClick}>
                                 VIDEO
                             </TabsTrigger>
                         </TabsList>

@@ -22,7 +22,7 @@ function InputField() {
     console.log("submitted");
   };
   return (
-    <div className="h-full w-[48%] flex justify-center items-end">
+    <div className="h-full w-[45%] flex justify-center items-end">
       <PlaceholdersAndVanishInput
         placeholders={placeholders}
         onChange={handleChange}
