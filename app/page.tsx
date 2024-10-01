@@ -6,6 +6,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Playground from "./components/playground";
+import { RiToolsFill } from "react-icons/ri";
 
 export default function Home() {
 
@@ -30,11 +31,11 @@ export default function Home() {
 
                     <nav className="py-3 px-8 flex items-center justify-between border-b border-b-gray-300 dark:border-0">
                         <h1 className="text-3xl dark:text-white">PromoGen</h1>
-                        <div className="flex items-center gap-8 pr-10">
+                        {/* <div className="flex items-center gap-8 pr-10">
                             <Link href={"/"} className="text-white">Home</Link>
                             <Link href={"/generate-image"} className="text-white">Image</Link>
                             <Link href={"/generate-video"} className="text-white">Video</Link>
-                        </div>
+                        </div> */}
                     </nav>
                     <div className="flex flex-col pt-[10vh] px-[4vw] gap-[5vh]">
                         <div className="py-5">
@@ -47,25 +48,12 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="h-[35vh] w-[85vw] flex pt-5 gap-8">
-                            {/* <Link href={"/generate-image"}>
-                                <Button variant="default">
-                                    <p className="text-lg p-4">
-                                        Generate Image
-                                    </p>
-                                </Button>
-                            </Link> */}
                             <Button variant="default" onClick={moveDown}>
                                 <p className="text-lg p-4">
-                                    Generate
+                                    Start Crafting 
                                 </p>
+                                <RiToolsFill className="scale-125" />
                             </Button>
-                            {/* <Link href={"/generate-video"}>
-                                <Button variant="default">
-                                    <p className="text-lg p-4">
-                                        Generate Video
-                                    </p>
-                                </Button>
-                            </Link> */}
                         </div>
                     </div>
 
