@@ -72,6 +72,9 @@ const config: Config = {
 				},
 			},
 		},
+		inset: {
+			'calc-right': 'calc(100% - 100px)', // Custom utility
+		},
   	}
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors],

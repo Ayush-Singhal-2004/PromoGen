@@ -2,7 +2,11 @@
 
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
 
-function InputField() {
+type InputFieldProp = {
+  value: String
+}
+
+function InputField({value}: InputFieldProp) {
   const placeholders = [
     "Enter your product's name",
     "Describe your promotion (e.g., 50% Off)",
@@ -20,9 +24,16 @@ function InputField() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("submitted");
+
+    //TODO: Generate image/video
+
   };
+  
   return (
-    <div className="h-full w-[45%] flex justify-center items-end">
+    <div className="h-full w-[45%] flex flex-col justify-between items-center">
+      <h1 className="text-4xl font-semibold">
+        Generate {value}
+      </h1>
       <PlaceholdersAndVanishInput
         placeholders={placeholders}
         onChange={handleChange}

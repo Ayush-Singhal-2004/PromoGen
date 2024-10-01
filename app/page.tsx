@@ -19,12 +19,17 @@ export default function Home() {
     }
 
     const handleTabClick = () => {
-        if(state === "image") {
-            setState("video");
-        }
-        else {
-            setState("image");
-        }
+        // const innerBox = document.querySelector('#output-area') as HTMLElement;
+        // if(state === "image") {
+        //     setState("video");
+        //     innerBox.classList.remove('left-0');
+        //     innerBox.classList.add('left-[calc(100%-50%)]');
+        // }
+        // else {
+        //     setState("image");
+        //     innerBox.classList.remove('left-[calc(100%-50%)]');
+        //     innerBox.classList.add('left-0');
+        // }
     }
 
     return (
